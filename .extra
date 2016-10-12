@@ -1,0 +1,58 @@
+# Git credentials
+GIT_AUTHOR_NAME="Víctor González"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="aficiomaquinas@users.noreply.github.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+# Dropbox Development Folder
+DEV="$HOME/Dropbox/Development"
+
+# RVM
+PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Android SDK
+PATH="$PATH:$DEV/android-sdk-macosx/tools"
+PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+
+# GOPATH
+export GOPATH="$HOME/go"
+
+# GOBIN
+PATH="$PATH:$GOPATH/bin"
+
+# Go GAE SDK
+PATH="$PATH:$DEV/go_appengine"
+
+# Ngrok
+PATH="$PATH:$DEV/ngrok"
+
+# Dart bin
+PATH="$PATH:$HOME/dart/dart-sdk/bin"
+
+# Source local bin
+PATH="$PATH:$HOME/bin"
+PATH="/usr/local/sbin:$PATH"
+
+# Google Cloud SDK.
+source "$HOME/google-cloud-sdk/path.bash.inc"
+
+# Bash completion for gcloud.
+source "$HOME/google-cloud-sdk/completion.bash.inc"
+
+# NVM
+export NVM_DIR="/Users/aficio/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Docker
+mc() {
+  unset $(env | grep DOCKER | awk -F'=' '{print $1}' | xargs)
+}
+
+# Show/hide files
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# Should be the last line
+export PATH

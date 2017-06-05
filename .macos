@@ -881,6 +881,15 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 # Bypass the annoyingly slow t.co URL shortener
 defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
+###############################################################################
+# VLC.app                                                                #
+###############################################################################
+
+# Disable history
+defaults write org.videolan.vlc NSRecentDocumentsLimit 0
+# defaults delete org.videolan.vlc.LSSharedFileList RecentDocuments
+defaults write org.videolan.vlc.LSSharedFileList RecentDocuments -dict-add MaxAmount 0
+
 # ###############################################################################
 # # Spectacle.app                                                               #
 # ###############################################################################
